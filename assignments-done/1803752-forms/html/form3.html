@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Form 3</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1" />
+        <meta name="Author" content="Kacian Richards" />
+        <meta name="keywords" content="CSS, Forms" />
+        <style type="text/css">
+            body {
+                margin: 10px;
+                background-image: url('../assets/backg.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            #container {
+                border-radius: 10px;
+                background-color: aliceblue;
+                padding-right: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 1200px;
+                height: 600px;
+            }
+
+            /*grouping selector*/
+            fieldset {
+                background-color: antiquewhite;
+            }
+
+            .tOne {
+                position: absolute;
+                left: 100px;
+                width: 500px;
+            }
+
+            /*class*/
+            .tTwo {
+                position: absolute;
+                right: 100px;
+                width: 500px;
+            }
+
+            /*specific class*/
+            .login,
+            .reg {
+                font-size: 30px;
+                padding-bottom: 20px;
+                font-weight: bold;
+            }
+
+            /*type*/
+            input[type=submit] {
+                color: grey;
+                border-radius: 0px;
+            }
+
+            #log,
+            #regist {
+                border-radius: 5px;
+            }
+
+            a:hover {
+                color: #FF00FF;
+            }
+
+            /*pseudo-class*/
+            #register:hover {
+                color: darkgray;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <div id="container">
+            <form>
+                <div class="tOne">
+                    <legend class="login">Login</legend>
+                    <fieldset>
+                        <label for="user">Username or Email Address: *</label><br />
+                        <input type="text" id="user" name="user" maxlength="40" required /><br />
+                        <label for="pass">Password: *</label><br />
+                        <input type="password" id="pwd" name="pwd" maxlength="20" required />
+                        <br />
+                        <br />
+                        <input type="submit" value="LOGIN" id="log" name="log" />
+                        <input type="checkbox" id="remember" name="remember" value="me">
+                        <label for="remember"> Remember Me!</label>
+                        <br />
+                        <a href="#" id="lost">Lost your password?</a>
+                    </fieldset>
+                </div>
+                <div class="tTwo">
+                    <legend class="reg">Register</legend>
+                    <fieldset>
+                        <label for="phone">Phone: *</label><br />
+                        <input type="tel" id="tel" name="phone" required /><br />
+                        <div id="Fname" style="white-space:nowrap;">
+                            <label for="fname">First Name: *</label><br />
+                            <input type="text" id="fname" name="firstname" maxlength="25" required />
+
+                        </div>
+                        <div id="Lname" style="white-space:nowrap;">
+                            <label for="lname">Last Name: *</label><br />
+                            <input type="text" id="lname" name="lastname" maxlength="30" required /><br />
+                        </div>
+                        <label for="email">Email: *</label><br />
+                        <input type="email" id="email" name="email" required placeholder="Email@address.com" /><br />
+                        <label for="pass">Password: *</label><br />
+                        <input type="password" id="pwd" name="pwd" maxlength="20" required /><br /><br />
+                        <input type="submit" value="REGISTER" id="regist" name="register" /><br />
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>

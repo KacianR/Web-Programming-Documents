@@ -1,0 +1,147 @@
+<!Doctype html>
+<html>
+
+     <head>
+          <meta charset="UTF-8" />
+          <meta name="viewpoint" content="width=device-width; initial-scale=1" />
+          <meta name="Author" content="Kacian Richards" />
+          <meta name="keywords" content="Javascript, variable, functions" />
+          <title>
+               Introduction to Javascript Week 1
+          </title>
+          <script>
+               //function definition
+               function displayMessage(name, favCol, age) {
+                    var today = new Date();
+                    var hours = today.getHours();
+                    var minutes = today.getMinutes();
+                    document.write("<p style='text-align:right;'>" + today + "</p><hr/><br/>");
+                    //morning
+                    if (hours < 12) {
+                         document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Morning ");
+                    } else {
+                         //noon
+                         if (hours == 12 && minutes == 00) {
+                              document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Noon ");
+                         }
+                         //hours is greater than or equal 12
+                         //afternoon                         
+                         if (hours < 16) {
+                              document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Afternoon ");
+
+                         } else {
+                              //evening
+                              //greater than and equal 17
+                              if (hours < 20) {
+                                   document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Evening ");
+                              } else {
+                                   if (hours < 24) {
+                                        document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Midnight ");
+
+                                   } else {
+                                        //midnight
+                                        if (hours == 24 && minutes == 00) {
+                                             document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Midnight ");
+                                        }
+                                   }
+                              }
+                         }
+                    }
+                    document.write(name + ",  Welcome to Javascript Programming</h1>");
+               }
+               /*Function image insert*/
+               function insert() {
+                    var today = new Date();
+                    var hours = today.getHours();
+                    var minutes = today.getMinutes();
+                    var img = document.createElement("img");
+                    if (hours < 12) {
+                         img.src = "../img/morning.jpg";
+                    } else {
+                         //noon
+                         if (hours == 12 && minutes == 00) {
+                              img.src = "../img/noon.jpg";
+                         } else {
+                              //afternoon                         
+                              if (hours < 16) {
+                                   img.src = "../img/afternoon.jpg";
+                              } else {
+                                   //evening                              
+                                   if (hours < 20) {
+                                        img.src = "../img/evening.jpg";
+                                   } else {
+                                        //night
+                                        if (hours < 24) {
+                                             img.src = "../img/gnight.jpg";
+
+                                        } else {
+                                             //midnight
+                                             if (hours == 24 && minutes == 00) {
+                                                  img.src = "../img/midnight.jpg";
+                                             }
+                                        }
+                                   }
+                              }
+                         }
+                    }
+                    var block = document.getElementById("image");
+                    block.appendChild(img);
+               }
+
+
+               /*Function background change*/
+               function changeBackground(age) {
+                    var color;
+                    if (age < 25) {
+                         document.write("<style> body{background-color:lightblue;} </style>");
+                    } else {
+                         if (age < 35) {
+                              document.write("<style> body{background-color:lightgreen;} </style>");
+                         } else {
+                              if (age < 45) {
+                                   document.write("<style> body{background-color:aqua;} </style>");
+                              } else {
+                                   if (age < 55) {
+                                        document.write("<style> body{background-color:coral;} </style>");
+                                   } else {
+                                        document.write("<style> body{background-color:lightgrey;} </style>");
+                                   }
+                              }
+                         }
+                    }
+               }
+               /*start of function
+               script comments*/
+               var name, favCol, age;
+               name = window.prompt('Please enter your name');
+               window.alert("Thank you " + name);
+               favCol = window.prompt('What is your favourite colour:');
+               age = window.prompt('Please enter you age:');
+               window.alert('Favourite colour ' + favCol + ' and age is ' + age);
+               /*to break the line in javascript use a backslash*/
+               displayMessage(name, favCol, age);//function call
+               changeBackground(age);
+          </script>
+     </head>
+
+     <body>
+          <div id="image">
+               <script type="text/javascript">
+                    insert();
+               </script>
+          </div>
+
+          <!--    Web Programming ClassWork UN2 & UM2 due March 21st
+Part 1 - Complete the If statement to display the following greeting
+morning = midnight and noon
+afternoon = between noon and 4 pm (16hrs)
+evening = between 4pm (16hrs) and 8 pm (20 hrs)
+night = between 8 pm (20 hrs) and midnight (24 hrs)
+Part 2 - Add an image
+In addition, display an appropriate image with your greeting depending on the
+time of day
+Part 3 - Change the background color of the page based on a criteria (if age,
+give 3 different backgrounds-->
+     </body>
+
+</html>

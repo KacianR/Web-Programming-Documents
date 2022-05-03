@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Week 3-Tables, iframes, bookmarks & Email Links</title>
+        <meta charset="UTF-8">
+        </meta>
+        <meta name="viewport" content="width=device-width initial-scale=1" />
+        <meta name="Author" content="Kacian Richards" />
+        <meta name="keywords" content="tables,iframes,bookmarks,email" />
+    </head>
+
+    <body style="background:url(../images/backg.png); float: inherit; margin-left: 150px;">
+        <section>
+            <table border='1' cellpadding='20' cellspacing="5" width="90%" style='background-color: lightgreen;'>
+                <tr>
+                    <th colspan='4' id="head">
+                        <hr />
+                        <h3>Week 3-Tables, iframes, bookmarks & Email Links</h3>
+                        <hr />
+                        <br />
+                    </th>
+                </tr>
+                <tr>
+                    <td width="25%">
+                        <img src='../images/backg.png' width="300" height="150" />
+                    </td>
+                    <td colspan="3" height="300px">
+                        <iframe src='../../week1/html/lab1.html' width='100%' height="300px" name='myframe'></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <table border="1" cellpadding='20' width="100%" style='background-color: lightgreen;'>
+                            <tr>
+                                <td rowspan="2" width="25%">
+                                    <img src="../images/week1tran.png" width="150px" height="150px">
+                                </td>
+                                <!--second td is already accounted-->
+                                <td>
+                                    <a href="#">Link 1</a>
+                                </td>
+                                <td rowspan="2">
+                                    <a href='mailto:kacian.rich@gmail.com?cc=kacian.rich@gmail.com&subject=RE:Web%20Programming%20Individual%20Assignment&body=The%20Body%20of%20the%20email'
+                                        target="_blank"><img src="../images/transmail.png" width="150px"
+                                            height="150px" /></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">Link 2</a></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="25%"><a href="#head">BOOKMARK</a></td>
+                    <td><img src="../images/week1tran.png" width="150px" height="150px" /></td>
+                </tr>
+            </table>
+        </section>
+        <footer>
+            <br />
+            <hr />
+            <h5 style='text-align: right;'>Copyright &copy; Kacian Richards January 31, 2022</h5>
+            <hr />
+        </footer>
+
+
+    </body>
+
+</html>
+<!--task1: find and put the subject(cc) and body of the text for the email link-->
+<!-- change the text from the email link into an image-->
+<!--task 2:link 1 and link 2 rename them and call them week one and week two then do the same in week1 and week2. -->
+<!--when clicked on they should open in the iframe-->
+<!--task 3: create a bookmark on your page to link to the third page-->

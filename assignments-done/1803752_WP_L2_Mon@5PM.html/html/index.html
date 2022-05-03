@@ -1,0 +1,62 @@
+<!doctype html>
+<!--Kacian Richards 1803752-->
+<html>
+
+     <head>
+          <title>BMI</title>
+          <link rel="stylesheet" href="../css/format.css">
+          <script src="../javascript/layout.js"></script>
+     </head>
+
+     <body>
+          <h1 id="head">APPLICATION FORM</h1>
+
+          <div id="container">
+               <form for="BMI" action="../html/index.html" onsubmit="BMIcheck()">
+                    <fieldset>
+                         <legend id="head">BMI systems</legend>
+                         <!--Child's first name-->
+                         <lable for="fname">Child's First Name:</lable><br />
+                         <input type="text" id="fName" size="40" maxlength="30" minlength="1" placeholder="FirstName"
+                              required />
+                         <br>
+                         <!--Child's last name-->
+                         <label for="lname">Child's Last name:</label><br />
+                         <input type="text" id="lName" size="40" maxlength="30" minlength="1" placeholder="Last Name"
+                              required />
+                         <br />
+                         <!--Parent's email-->
+                         <label for="email">Parent's Email address:</label><br />
+                         <input type="email" onclick="emailalert()" />
+                         <br />
+                         <!--gender-->
+                         <label for="gender">Gender: </label><br />
+                         <input type="radio" name="gender" id="female" value="f" />Female
+                         <br />
+                         <input type="radio" name="gender" id="male" value="m" />Male
+                         <br />
+                         <!--Child's Date of Birth-->
+                         <label for="dob">Child's Date of Birth:</label><br />
+                         <input type="date" id="dob" required />
+                         <!--calculate age-->
+                         <br />
+                         <!--Weight-->
+                         <label for="weight">Weight of Child:<sub>in lbs</sub></label><br />
+                         <input type="text" size="30" required />
+                         <br />
+                         <!--Height of Child-->
+                         <label for="height">Height of Child:<sub>in inches</sub></label><br />
+                         <input type="text" size="30" required />
+                         <br /><br /><br />
+                         <!--buttons-->
+                         <input type="submit" value="calculate" />
+                         <input type="button" value="display" onclick="DisplayAll()" />
+                         <input type="reset" value="clear fields" />
+                         <div id="final"></div>
+                    </fieldset>
+               </form>
+
+          </div>
+     </body>
+
+</html>

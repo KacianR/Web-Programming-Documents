@@ -1,0 +1,125 @@
+/*Only CSS in this file*/
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:18px;
+    line-height:1.5;/*sets the distance between lines of text*/
+    padding:0;
+    margin:0;
+    background-color:beige;
+}
+header{
+    background: #35424a;
+    color:white;
+    padding-top: 30px;
+    min-height: 90px;
+    /*when the screen adjusts then height will adjust*/
+    border-bottom: #e8491d 1px solid;
+}
+header a{
+    color:white;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:16px;
+    padding: 0.5px;
+}
+header li{
+    float: left;
+    display:inline;
+    padding: 0 10px 0 20px;
+}
+header #logo{
+    float:left;
+}
+
+header #logo h1{
+    margin:0;
+}
+header nav{
+    float:right;
+    margin-top: 10px;
+}
+
+header .highlight,
+header .current a{
+    color:#e8491d;
+    font-weight:700;/*bold*/
+}
+
+header a:hover{
+    color: #35424a;
+    font-weight: bold;
+    background: #e8491d;
+    /*border-radius:10px 10px 0px 0px;*/
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+}
+.my_button{
+    height:38px;
+    background:#e8491d;
+    border:0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color:white;
+    border:1px outset #b37300;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+}
+#showcase{
+    min-height: 600px;/*400px*/
+    background: url(../image/showcase3.jpeg) no-repeat;
+    text-align: center;
+    background-size: cover;
+    color: white;
+}
+#showcase h1{
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+#showcase p{
+    font-size: 18px;
+}
+
+#newsletter{
+    padding: 1px;
+    color:#ffffff;
+    background: #35424a;
+}
+#newsletter h1{
+    float:left;
+}
+#newsletter form{
+    float:right;
+    margin-top: 15px;
+}
+#newsletter input[type=email]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+    border: 1px;
+}
+#boxes{
+    margin-top:20px;
+}
+#boxes .box{
+    float:left;
+    text-align: center;
+    width: 28%;
+    padding:20px;
+}
+#boxes .box img{
+    width: 200px;
+    height:150px;
+}
+
+footer{
+    padding:20px;
+    margin-top: 20px;
+    color:#ffffff;
+    background-color: #e8491d;
+    text-align: right;
+}

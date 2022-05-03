@@ -1,0 +1,28 @@
+/*Kacian richards 1803752*/
+
+body {
+     background-color: paleturquoise;
+     background-repeat: no-repeat;
+}
+
+form {
+     position: absolute;
+     font-size: 16px;
+     font-family: Arial, Helvetica, sans-serif;
+     top: 100px;
+     bottom: 100px;
+     right: 150px;
+     left: 300px;
+     background-color: aliceblue;
+     border: 10px solid white;
+}
+
+fieldset {
+     width: 95%;
+     height: 95%;
+}
+
+legend {
+     font-size: 32px;
+     font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,184 @@
+<!Doctype html>
+<html>
+
+     <head>
+          <meta charset="UTF-8" />
+          <meta name="viewpoint" content="width=device-width; initial-scale=1" />
+          <meta name="Author" content="Kacian Richards" />
+          <meta name="keywords" content="Javascript, variable, functions" />
+          <title>
+               Introduction to Javascript Week 3- Loops,Arrays, randomnumbers
+          </title>
+          <script>
+               //function definition
+               function displayMessage(name, favCol, age) {
+                    var today = new Date();
+                    var hours = today.getHours();
+                    var minutes = today.getMinutes();
+                    document.write("<p style='text-align:right;'>" + today + "</p><hr/><br/>");
+                    //morning
+                    if (hours < 12) {
+                         document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Morning ");
+                    } else {
+                         //noon
+                         if (hours == 12 && minutes == 00) {
+                              document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Noon ");
+                         }
+                         //hours is greater than or equal 12
+                         //afternoon                         
+                         if (hours < 16) {
+                              document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Afternoon ");
+
+                         } else {
+                              //evening
+                              //greater than and equal 17
+                              if (hours < 20) {
+                                   document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Evening ");
+                              } else {
+                                   if (hours < 24) {
+                                        document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Midnight ");
+
+                                   } else {
+                                        //midnight
+                                        if (hours == 24 && minutes == 00) {
+                                             document.write("<h1 style= 'color:" + favCol + "; font-size:" + age + "pt;'>Good Midnight ");
+                                        }
+                                   }
+                              }
+                         }
+                    }
+                    document.write(name + ",  Welcome to Javascript Programming</h1>");
+               }
+               /*Function image insert*/
+               function insert() {
+                    var today = new Date();
+                    var hours = today.getHours();
+                    var minutes = today.getMinutes();
+                    var img = document.createElement("img");
+                    if (hours < 12) {
+                         img.src = "../img/morning.jpg";
+                    } else {
+                         //noon
+                         if (hours == 12 && minutes == 00) {
+                              img.src = "../img/noon.jpg";
+                         } else {
+                              //afternoon                         
+                              if (hours < 16) {
+                                   img.src = "../img/afternoon.jpg";
+                              } else {
+                                   //evening                              
+                                   if (hours < 20) {
+                                        img.src = "../img/evening.jpg";
+                                   } else {
+                                        //night
+                                        if (hours < 24) {
+                                             img.src = "../img/gnight.jpg";
+
+                                        } else {
+                                             //midnight
+                                             if (hours == 24 && minutes == 00) {
+                                                  img.src = "../img/midnight.jpg";
+                                             }
+                                        }
+                                   }
+                              }
+                         }
+                    }
+                    var block = document.getElementById("image");
+                    block.appendChild(img);
+               }
+
+
+               /*Function background change*/
+               function changeBackground(age) {
+                    var color;
+                    if (age < 25) {
+                         document.write("<style> body{background-color:lightblue;} </style>");
+                    } else {
+                         if (age < 35) {
+                              document.write("<style> body{background-color:lightgreen;} </style>");
+                         } else {
+                              if (age < 45) {
+                                   document.write("<style> body{background-color:aqua;} </style>");
+                              } else {
+                                   if (age < 55) {
+                                        document.write("<style> body{background-color:coral;} </style>");
+                                   } else {
+                                        document.write("<style> body{background-color:lightgrey;} </style>");
+                                   }
+                              }
+                         }
+                    }
+               }
+               /*start of function
+               script comments*/
+               function randomValues() {
+                    var ranNum, square, rows;
+                    rows = window.prompt("How many rows in the table?");
+                    document.write("<table border = '1' cellpadding='15'><tr><th>Number</th><th>Number <sup>2</sup></th><th>2 * Number</th></tr> ");
+                    for (var i = 0; i < rows; i++) {
+                         ranNum = Math.floor(Math.random() * 19) + 1;
+                         square = ranNum * ranNum;
+                         document.write("<tr><td>" + ranNum + "</td><td>" + square + "</td><td>" + 2 * square + "</td></tr>");
+                    }
+                    document.write("</table>");
+               }
+               // this function will store my likes in an array
+               function myLikes() {
+                    const myarray = ["Jackfruit", "East Indian Mango"];
+
+                    var text, like, ans = "y", i;
+
+                    do {
+                         like = window.prompt("What do you like?");
+                         myarray.push(like);
+                         ans = window.prompt("Enter another like <y/n>");
+                    } while (ans != "n");
+
+
+                    like = window.prompt("what do you like?");
+                    myarray.push(like);
+
+                    let text = "<ul>";
+
+                    for (i = 0; i < myarray; i++) {
+                         text = text + "<li>" + myarray[i] + "</li>";
+                    }
+                    text = text + "</ul>";
+
+                    document.getElementById("likes").innerHTML = text;
+               }
+
+               var name, favCol, age;
+               name = window.prompt('Please enter your name');
+               window.alert("Thank you " + name);
+               favCol = window.prompt('What is your favourite colour:');
+               age = window.prompt('Please enter you age:');
+               window.alert('Favourite colour ' + favCol + ' and age is ' + age);
+               /*to break the line in javascript use a backslash*/
+               displayMessage(name, favCol, age);//function call
+               changeBackground(age);
+               randomValues();
+               //my likes
+               document.write("<h3>Things that " + name + " likes:</h3><br/>");
+               document.write("<p id='likes'> likes </p>");
+               myLikes();
+          </script>
+     </head>
+
+     <body>
+          <div id="image">
+               <script type="text/javascript">
+                    insert();
+               </script>
+          </div>
+
+     </body>
+
+</html>
+<!--
+//end the function
+//This function creates a table with the value of a random number from 1 to the number of rows specified, we
+//will square the number and also find 2 * the square of the number
+//this function will store my liked in an array and display my likes as an unordered list
+-->

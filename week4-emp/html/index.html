@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Forms</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1" />
+        <meta name="Author" content="Kacian Richards" />
+        <meta name="keywords" content="CSS, Forms" />
+        <style type="text/css">
+            /*add comments for CSS*/
+            body {
+                margin: 0;
+                background-image: url('.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            #container {
+                border-radius: 5px;
+                background-color: aliceblue;
+                padding: 20px;
+            }
+
+            fieldset {
+                border: 2px solid white;
+                -moz-border-radius: 8px;
+                -webkit-border-radius: 8px;
+                border-radius: 8px;
+                background-color: azure;
+            }
+
+            div {
+                background-color: blueviolet;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <form name="Information" action="mailto:kacian.rich@gmail.com">
+                <fieldset style="padding:20px;width:500px;">
+                    <label for="fname">First Name:</label>
+                    <legend>Personal Information</legend>
+                    <input type="text" name="fname" id="fname" size="30" maxlength="20"
+                        placeholder="First Name"></input>
+                    <br /><br />
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="lname" id="lname" size="30" maxlength="20" placeholder="LastName" /><br />
+                    <label for="email">Email Address:</label>
+                    <input type="email" name="email" id="email" size="30" maxlength="20"
+                        placeholder="Email Address" /><br />
+                    <label for="address">Address:</label>
+                    <input type="text" name="lname" id="lname" size="30" maxlength="20" placeholder="Address" /><br />
+                </fieldset>
+                <br /><br />
+                <fieldset style="padding:20px;width:500px">
+                    <legend>Demographic information</legend>
+                    <label for="gender">Gender</label>
+                    <input type="radio" name="gender" id="gender" value="f" />Female
+                    <input type="radio" name="gender" id="gender" value="m" />Male
+                    <br /><br />
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" name="dob" id="dob" />
+                    <label for="parish" id="parish">Parish of Birth</label>
+                    <select name="parish" id="parish">
+                        <option value="cat">St. Catherine</option>
+                        <option value="ela">St.Clarendon</option>
+                        <option value="kgn">Kingston</option>
+                        <option value="ann">St. Ann</option>
+                        <option value='west'>Westmoreland</option>
+                        <option value='eli'>St.Elizabeth</option>
+                        <option value="han">Hanover</option>
+                        <option value='tre'>Trelawny</option>
+                        <option value="por">Portland</option>
+                    </select>
+                </fieldset>
+                <br />
+                <br />
+                <fieldset style="padding:20px;width:500px">
+                    <legend>Activities</legend>
+                    <h5>Check all that is applicable</h5>
+                    <input type="checkbox" name="hik" value="1" />Hiking
+                    <input type="checkbox" name="eat" value="1" />eating
+                    <input type="checkbox" name="read" value="1" /> Reading
+                    <input type="checkbox" name="tv" value="1" /> Watching TV
+                </fieldset>
+
+                <fieldset style="padding:20px;width:500px;">
+                    <legend>Comments</legend>
+                    <textarea name="comments" rows="10" cols="60" placeholder="Write comments here"></textarea>
+
+                </fieldset>
+                <br />
+                <br />
+                <input type="submit" value="submit" /> &nbsp;
+                <input type="reset" value="clear fields" />
+
+
+            </form>
+        </div>
+    </body>
+
+</html>

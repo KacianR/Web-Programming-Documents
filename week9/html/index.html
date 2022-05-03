@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+     <head>
+          <title>Week Nine- Javascript calculator</title>
+          <meta charset="UTF-8" />
+          <meta name="viewpoint" content="width=device-width; initial-scale=1" />
+          <meta name="Author" content="Kacian Richards" />
+          <meta name="keywords" content="Javascript, inner HTML" />
+          <link rel="stylesheet" href="../css/layout.css">
+          <script>
+               function changeTitle() {
+                    var name;
+                    name = window.prompt("What is your name?");
+                    //alert(name);
+                    //window.alert("Thank you " + name);
+                    name = name + "'s ";
+                    document.getElementById("title").innerHTML = name;
+               }// function end
+
+               function putOperator(operator) {
+                    document.getElementById('operation').value = operator;
+               }
+               function calculate() {
+                    var num1, num2, ans, ran;
+                    num1 = document.getElementById('value1').value;
+                    num2 = document.getElementById('value2').value;
+                    //parseInt converts a data type into an int
+                    //parsefloat converts a data type to a float 
+                    num1 = parseFloat(num1);// cast the text located in the variable num1 to a floating point number
+                    num2 = parseFloat(num2);
+                    numCheck(num1, num2);
+                    if (document.getElementById('add').checked) {
+                         ans = num1 + num2;
+                    }
+                    if (document.getElementById('subtract').checked) {
+                         ans = num1 - num2;
+                    }
+                    if (document.getElementById('multiply').checked) {
+                         ans = num1 * num2;
+                    }
+                    if (document.getElementById('divide').checked) {
+                         ans = num1 / num2;
+                         if (num1 == 0 || num2 == 0) {
+                              window.alert('You cannot divide by 0, so a random number was generated');
+                              ran = Math.floor(Math.random() * 100) + 1;
+                              ans = ran;
+                         }
+                    }
+
+                    //put the answer in the result box;
+                    document.getElementById('result').value = ans;
+                    changeTitle();
+               }
+               /*random number generator
+               range is randome function + (max - min) + min where 
+               max is the maximum number in the range and min is the starting point
+               e.g.math.floor(math.random()% 20) + 1;
+               A random number between 20-30 is written as math.random()%10 + 20;
+               */
+               function numCheck(num1, num2) {
+                    var ran;
+                    if (num1 >= 100) {
+                         window.alert('first value is too high. It should be 0 to 99 only.');
+                         ran = Math.floor(Math.random() * 100) + 1;
+                         document.getElementById('value1').value = ran;
+                    }
+                    if (num2 >= 100) {
+                         window.alert('second value is too high. It should be 0 to 99 only.');
+                         ran = Math.floor(Math.random() * 100) + 1;
+                         num2 = ran;
+                    }
+               }
+          </script>
+     </head>
+
+     <body>
+          <div class="container">
+               <form>
+                    <!--style="padding:20px; width:450px"-->
+                    <fieldset>
+                         <legend><span id="title">Simple</span> Calculator</legend>
+                         Value 1:&nbsp; <input type="text" size="6" id="value1" />&nbsp;&nbsp;
+                         Operation:&nbsp;<input type="text" size="2" id="operation" />
+                         Value 2:&nbsp; <input type="text" size="6" id="value2"><br /><br />
+                         Result:&nbsp; <input type="text" size="20" id="result"><br />
+
+                         +&nbsp;<input type="radio" name="operator" id="add" onclick="putOperator('+')" /><br>
+                         -&nbsp;&nbsp;<input type="radio" name="operator" id="subtract"
+                              onclick="putOperator('-')" /><br>
+                         *&nbsp;<input type="radio" name="operator" id="multiply" onclick="putOperator('*')" /><br>
+                         /&nbsp;&nbsp;<input type="radio" name="operator" id="divide"
+                              onclick="putOperator('/')" /><br><br>
+
+                         <button type="button" id="button1" onclick="calculate()">Calculate</button>
+                         <button type="reset" id="button2" value="Reset">Reset</button>
+                    </fieldset>
+               </form>
+          </div>
+     </body>
+
+</html>
+<!---
+1. Finish the if statement for the various operations
+Note that you cannot divide by zero so you must test if either value is a zero
+If the value is a zero then generate a random number greater than zero.
+2. This is a calculator for single and double digits only. Therefore if a
+user enters a value that is greater than 2 digits, display an error message and generate a random number
+that is either a single digit or double digit i.e. from
+0 to 99 only and store it in the form
+3. USe Css to beautify the calculator page 3.
+
+-->
+<!--
+     function ChickChickchick (){//start function
+          var rnum, guess, tries;
+          rnum = Math.floor (Math.random () %19) + 1;
+          window.alert (rnum) ;
+          guess=window.prompt ('Chick chick chick, how many corns on board? ');
+          //alert (guess):
+          if(guess == rnum){
+               window.alert ("You are right");
+          }else{
+               window.alert ("You are wrong");
+          }
+     }
+     ChickChickChick ();
+     
+-->

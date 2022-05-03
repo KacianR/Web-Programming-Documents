@@ -1,0 +1,74 @@
+/*CSS document*/
+body{
+     font-family:'Times New Roman', Times, serif;
+    font-size:18px;
+    line-height:1.5;
+    padding:0;
+    margin:0;
+    background-color:lightgreen;
+}
+header{
+     background: #228b22;
+    color:white;
+    padding-top: 30px;
+    min-height: 90px;
+    border-bottom: darkgreen 1px solid;
+}
+header h1{
+     font-size: 30px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+header a{
+    color:white;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:16px;
+    padding: 0.5px;
+}
+header nav{
+    float:right;
+    margin-top: 10px;
+}
+header li{
+    float: left;
+    display:inline;
+    padding: 0 10px 0 20px;
+}
+header a:hover{
+    color: #228b22;
+    font-weight: bold;
+    background: white;
+}
+
+header #logo{
+     float:left;
+     font-size:12px;
+}
+header a{
+     float:left;
+     padding: 0 5px 0px 5px;
+}
+table{
+     width:100%;
+     height:auto;
+     position:relative;
+     padding:20px;
+}
+.container{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+}
+
+table th{
+     font-size: 32px;
+}
+table iframe{
+     width:100%;
+     height:100%;
+}
+footer{
+     background:#228b22;
+     text-align: right;
+     color:whiote;
+}

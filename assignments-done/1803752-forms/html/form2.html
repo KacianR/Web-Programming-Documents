@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Form2</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1" />
+        <meta name="Author" content="Kacian Richards" />
+        <meta name="keywords" content="CSS, Forms" />
+        <style type="text/css">
+            body {
+                margin: 0;
+                background-image: url('../assets/backg.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                /*size should cover the body*/
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            #container {
+                width: 600px;
+                padding: 20px;
+                padding-right: 40px;
+                border-radius: 15px;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                background-color: #87ceeb;
+            }
+
+            /*grouping*/
+            fieldset {
+                position: relative;
+                border-width: 3px;
+                width: 500px;
+                padding: 20px;
+            }
+
+            /*type*/
+            input[type=text],
+            input[type=email],
+            textarea {
+                width: 100%;
+            }
+
+            input[type=submit] {
+                border-radius: 10px;
+            }
+
+            /*specific class*/
+            .attach1,
+            .attach2 {
+                font-size: 14px;
+            }
+
+        </style>
+
+    <body>
+        <div id="container">
+            <form>
+                <fieldset>
+                    <h1>Contact</h1>
+                    <label for="name">Your name: *</label><br />
+                    <input type="text" id="name" name="yourname" required />
+                    <br />
+                    <br />
+                    <label for="email">Email Address: *</label><br />
+                    <input type="email" id="email" name="email" maxlength="45" placeholder="email@address.com"
+                        required />
+                    <br />
+                    <br />
+                    <label for="subject">Subject: *</label><br />
+                    <input type="Text" id="sub" name="sub" maxlength="60" required />
+                    <br />
+                    <br />
+                    <label for="message">Message: *</label><br />
+                    <textarea name="message" rows="10" cols="100" placeholder="Insert a Message" required></textarea>
+                    <br />
+                    <br />
+                    <h5 class="attach2">Attachment#1</h5>
+                    <input type="file" id="attach1" value="Choose File" />
+                    <h5 class="attach1">Attachment#1</h5>
+                    <input type="file" id="attach2" value="Choose File" />
+                    <br />
+                    <br />
+                    <input type="submit" value="Send Message" /> &nbsp;
+                </fieldset>
+            </form>
+        </div>
+    </body>
+
+</html>

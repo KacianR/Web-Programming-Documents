@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Form1</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width initial-scale=1" />
+        <meta name="Author" content="Kacian Richards" />
+        <meta name="keywords" content="CSS, Forms" />
+        <style type="text/css">
+            body {
+                margin: 0;
+                background-image: url('../assets/backg.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                /*size should cover the body*/
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            #container {
+                border-radius: 20px;
+                background-color: lavender;
+                padding: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 1000px;
+                position: relative;
+                height: 650px;
+            }
+            /*grouping selector*/
+            legend {
+                position: relative;
+                left: 400px;
+                top: 10px;
+                border: 2px solid black;
+                background-color: lavender;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 30px;
+            }
+
+            fieldset {
+                position: absolute;
+                width: 980px;
+                height: 600px;
+                border: 3px solid black;
+            }
+            /*class*/
+            .guest,
+            .room {
+                font-size: 21px;
+                padding: 20px;
+            }
+
+            #tableOne {
+                position: absolute;
+                left: 50px;
+            }
+
+            #tableTwo {
+                position: absolute;
+                right: 50px;
+            }
+
+            /*type*/
+            input[type=submit] {
+                position: absolute;
+                bottom: 100px;
+                left: 150px;
+                width: fit-content;
+            }
+            /*specific class*/
+            .address1,
+            .address2 {
+                margin-left: 90px;
+            }
+            /*atribute selector*/
+            input[type=text],
+            input[type=tel],
+            input[type=date],
+            input[type=time],
+            input[type=email] {
+                width: 200px;
+                border: 1px solid gray;
+                border-radius: 0px;
+                padding: 0px;
+            }           
+
+            label {
+                border-style: solid;
+                border-bottom: 2px;
+                border-left: 2px;
+                border-top: 2px;
+                border-width: 2px;
+                border-color: gray;
+                background-color: darkgray;
+            }
+
+            textarea {
+                border: 2px solid gray;
+            }
+
+            .date {
+                color: grey;
+            }
+            /*Pseudo*/
+            #select:active{
+                color: lightgreen;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="container">
+            <form class="lab1" action="">
+                <fieldset>
+                    <legend>ABC Hotel Reservation</legend>
+                    <div id="tableOne">
+                        <p class="guest">Guest Information</p>
+                        <div id="name">
+                            <div style="white-space:nowrap;">
+                                <label for="fname"> First Name:</label>
+                                <input type="text" id="fname" name="firstname" maxlength="25" />
+                            </div>
+                            <div style="white-space:nowrap;">
+                                <label for="lname">Last Name:</label>
+                                <input type="text" id="lname" name="lastname" maxlength="30" />
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div id="address">
+                            <div style="white-space:nowrap;">
+                                <label for="address1">Address 1: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <input type="text" id="address1" name="address1" maxlength="30" /><br />
+                                <input type="text" class="address1" name="address1" maxlength="30" />
+                            </div>
+
+                            <div style="white-space:nowrap;">
+                                <label for="Address2">Address 2: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <input type="text" id="address2" name="address2" maxlength="30" /><br />
+                                <input type="text" class="address2" name="address2" maxlength="30" />
+                            </div>
+                        </div>
+                        <div id="area">
+                            <div style="white-space:nowrap;">
+                                <label for="city">City: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <input type="text" id="city" name="city" maxlength="30" />
+                            </div>
+                            <div style="white-space:nowrap;">
+                                <label for="state">State: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <input type="text" id="state" name="state" maxlength="30" placeholder="..." />
+                            </div>
+                            <div style="white-space:nowrap;">
+                                <label for="zip">Zip: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <input type="text" id="zip" name="zip" maxlength="5" />
+                            </div>
+                        </div>
+                        <br />
+                        <div id="contact">
+                            <div style="white-space:nowrap;">
+                                <label for="phone"> Phone:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"/>
+                            </div>
+                            <div style="white-space:nowrap;">
+                                <label for="email">Email: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <input type="email" id="email" name="email" maxlength="40" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tableTwo">
+                        <p class="room">Room Information</p>
+                        <div id="select" style="white-space:nowrap;">
+                            <label for="room">Room Type:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <select name="room" id="room">
+                                <option value="stan">Standard</option>
+                                <option value="two">Two Bed Suite</option>
+                                <option value="single">Single Bed Suite</option>
+                                <option value="master">Master Suite</option>
+                            </select>
+                        </div>
+                        <br />
+                        <br />
+                        <div id="checkin">
+                            <div style="white-space:nowrap;">
+                                <label for="checkindate">Check in Date:&nbsp;</label>
+                                <input type="date" id="checkindate" name="checkindate" />
+                            </div>
+                            <div style="white-space:nowrap;">
+                                <label for="checkintime">Check in Time:&nbsp;</label>
+                                <input type="time" id="checkintime" name="checkintime" />
+                            </div>
+                        </div>
+                        <br />
+                        <div id="checkout">
+                            <div style="white-space:nowrap;">
+                                <label for="checkoutdate">Check out Date:&nbsp;</label>
+                                <input type="date" id="checkoutdate" name="checkoutdate" /><br />
+                            </div>
+                            <div style="white-space:nowrap;">
+                                <label for="checkoutTime">Check out Time:&nbsp;</label>
+                                <input type="time" id="checkoutTime" name="checkoutTime" />
+                            </div>
+                        </div>
+                        <br />
+                        <div id="special">
+                            <label for="request">Special instruction: </label><br />
+                            <textarea name="request" rows="10" cols="35"></textarea>
+                        </div>
+                    </div>
+                    <input type="submit" value="submit" />
+                    <p class="date">DATE</p>
+                </fieldset>
+
+            </form>
+        </div>
+    </body>
+
+</html>
